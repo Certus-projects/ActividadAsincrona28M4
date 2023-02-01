@@ -1,0 +1,37 @@
+<section class="container-sm py-4">
+  <section class="col-6 mx-auto">
+    <h4 class="text-center">Login</h4>
+    <section class="form-group mt-3">
+      <label for="username">Username:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="username"
+        [(ngModel)]="username"
+        name="username"
+      />
+      <p *ngIf="userError != ''" class="text-danger">
+        {{ userError }}
+      </p>
+    </section>
+    <section class="form-group mt-3">
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        [(ngModel)]="password"
+        name="password"
+      />
+      <p *ngIf="passError != ''" class="text-danger">
+        {{ passError }}
+      </p>
+    </section>
+    <section class="form-group text-center mt-4">
+      <input class="btn btn-primary" (click)="login()" value="Login" />
+    </section>
+  </section>
+  <section *ngIf="error != ''" class="alert alert-danger col-6 mx-auto">
+    {{ error }}
+  </section>
+</section>
